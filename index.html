@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio de Soufian Bouktaib — Ingénieur Fullstack, spécialisé en microservices, Java, Spring Boot, Angular, React et Flutter."/>
+  <title>Soufian Bouktaib</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="page-progress" id="pageProgress"></div>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <nav>
+    <div class="nav-logo">SB.</div>
+
+    <ul class="nav-links">
+      <li><a href="#skills"         data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#projects"       data-i18n="nav_projects">Projets</a></li>
+      <li><a href="#experience"     data-i18n="nav_exp">Expérience</a></li>
+      <li><a href="#education"      data-i18n="nav_edu">Formation</a></li>
+      <li><a href="#certifications" data-i18n="nav_certif">Certifications</a></li>
+      <li><a href="#langues"        data-i18n="nav_langues">Langues</a></li>
+      <li><a href="#interets"       data-i18n="nav_interets">Intérêts</a></li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Me contacter</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">🌐 EN</button>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+
+    <div class="hero-wrap">
+      <div class="hero">
+
+        <div class="hero-eyebrow">
+          <div class="eyebrow-line"></div>
+          <span data-i18n="hero_tag">Ingénieur d'études et de développement</span>
+          <div class="status-badge">
+            <div class="dot"></div>
+            <span data-i18n="hero_status">Disponible</span>
+          </div>
+        </div>
+
+        <h1>
+          <span class="name-accent">Soufian</span><br>
+          Bouktaib.
+        </h1>
+
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Ingénieur logiciel diplômé de l'ENSA Tanger, spécialisé en développement full-stack et microservices.
+          Passionné par l'innovation, je conçois des solutions performantes et évolutives adaptées aux besoins métiers.
+        </p>
+
+        <div style="margin-top:14px; font-size:0.88rem; color: var(--muted); min-height:24px;">
+          <span id="typedRole" style="color:var(--accent2)"></span><span class="cursor"></span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary" data-i18n="hero_btn1">Voir mes projets</a>
+          <a href="mailto:soufianbouktaib1@gmail.com" class="btn btn-outline">📧 soufianbouktaib1@gmail.com</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">1</div>
+            <div class="stat-label" data-i18n="stat1">Expériences</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label" data-i18n="stat2">Technologies maîtrisées</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">6</div>
+            <div class="stat-label" data-i18n="stat3">Projets académiques</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-label" data-i18n="stat4">Langues parlées</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-code-strip">
+const engineer = {
+  name: "Soufian Bouktaib",
+  stack: ["Spring Boot", "React",
+          "Flutter", "Docker"],
+  available: true,
+  passion: "Building scalable
+            solutions"
+};</div>
+    </div>
+
+    <div class="skills-section" id="skills">
+      <div class="skills-outer">
+        <div class="section-header reveal">
+          <div class="section-tag" data-i18n="s_skills_tag">Compétences</div>
+          <h2 class="section-title" data-i18n="s_skills_title">Mon <span>arsenal technique</span></h2>
+        </div>
+
+        <div class="skills-grid stagger-children">
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(56,189,248,0.1)">🖥️</div>
+            <h3 data-i18n="sk_lang">Langages</h3>
+            <div class="tags">
+              <span class="tag">Java</span><span class="tag">C#</span><span class="tag">Python</span>
+              <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">C</span>
+              <span class="tag">C++</span><span class="tag">PHP</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(129,140,248,0.1)">⚙️</div>
+            <h3 data-i18n="sk_back">Back‑End</h3>
+            <div class="tags">
+              <span class="tag">Spring Boot</span><span class="tag">.NET</span><span class="tag">Express.js</span>
+              <span class="tag">JEE</span><span class="tag">Laravel</span><span class="tag">JHipster</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(56,189,248,0.1)">🎨</div>
+            <h3 data-i18n="sk_front">Front‑End</h3>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Angular</span>
+              <span class="tag">Vue.js</span><span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(74,222,128,0.1)">📱</div>
+            <h3 data-i18n="sk_mobile">Mobile</h3>
+            <div class="tags">
+              <span class="tag">Flutter</span>
+              <span class="tag" data-i18n="sk_android">Android natif</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(251,191,36,0.1)">🗄️</div>
+            <h3 data-i18n="sk_db">Bases de données</h3>
+            <div class="tags">
+              <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span>
+              <span class="tag">MS SQL Server</span><span class="tag">OracleDB</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(239,68,68,0.1)">🚀</div>
+            <h3 data-i18n="sk_devops">DevOps & Cloud</h3>
+            <div class="tags">
+              <span class="tag">Docker</span><span class="tag">Podman</span><span class="tag">AWS</span>
+              <span class="tag">Azure</span><span class="tag">GitHub Actions</span><span class="tag">GitFlow</span>
+              <span class="tag">Nginx</span><span class="tag">CI/CD</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(129,140,248,0.1)">🔒</div>
+            <h3 data-i18n="sk_tests">Tests & Sécurité</h3>
+            <div class="tags">
+              <span class="tag">JUnit</span><span class="tag">Mockito</span><span class="tag">Postman</span>
+              <span class="tag">JMeter</span><span class="tag">OWASP ZAP</span><span class="tag">Burp Suite</span>
+              <span class="tag">SonarQube</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-icon" style="background:rgba(56,189,248,0.1)">📋</div>
+            <h3 data-i18n="sk_tools">Outils & Méthodes</h3>
+            <div class="tags">
+              <span class="tag">Scrum</span><span class="tag">Jira</span><span class="tag">Confluence</span>
+              <span class="tag">UML</span><span class="tag">Merise</span><span class="tag">MS Project</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <div class="section-header reveal">
+        <div class="section-tag" data-i18n="s_proj_tag">Projets académiques</div>
+        <h2 class="section-title" data-i18n="s_proj_title">Ce que j'ai <span>construit</span></h2>
+      </div>
+
+      <div class="proj-row proj-row-1">
+        <div class="project-card proj-large reveal">
+          <div class="proj-bg-num">01</div>
+          <div class="project-badges">
+            <span class="badge badge-blue">Microservices</span>
+            <span class="badge badge-green">Full‑Stack</span>
+            <span class="badge badge-purple" data-i18n="badge_collab">Collaboratif</span>
+          </div>
+          <h3 data-i18n="p1_title">🏫 Gestion Scolaire — Microservices</h3>
+          <p data-i18n="p1_desc">Plateforme complète de gestion scolaire construite sur une architecture microservices. Gestion des étudiants, enseignants, cours, notes et emplois du temps, avec une interface React moderne et des APIs Spring Boot indépendantes orchestrées via Docker.</p>
+          <div class="tech-list">
+            <span class="tech-pill">Spring Boot</span><span class="tech-pill">React</span>
+            <span class="tech-pill">Microservices</span><span class="tech-pill">Docker</span>
+            <span class="tech-pill">MySQL</span><span class="tech-pill">API Gateway</span>
+          </div>
+          <div class="card-anim"><div class="card-anim-ring"></div></div>
+        </div>
+
+        <div class="proj-col">
+          <div class="project-card proj-small reveal">
+            <div class="project-badges">
+              <span class="badge badge-purple">Machine Learning</span>
+              <span class="badge badge-blue">Computer Vision</span>
+            </div>
+            <h3 data-i18n="p2_title">🤖 Détection de Visages — ML</h3>
+            <p data-i18n="p2_desc">Projet de Computer Vision utilisant des techniques de Machine Learning pour détecter et reconnaître des visages en temps réel via OpenCV et des modèles de classification Python.</p>
+            <div class="tech-list">
+              <span class="tech-pill">Python</span><span class="tech-pill">OpenCV</span>
+              <span class="tech-pill">Machine Learning</span><span class="tech-pill">NumPy</span>
+            </div>
+            <div class="card-anim" style="bottom:14px;right:16px;">
+              <div class="card-anim-dots">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card proj-small reveal">
+            <div class="project-badges">
+              <span class="badge badge-blue">Microservices</span>
+              <span class="badge badge-green">Full‑Stack</span>
+              <span class="badge badge-purple" data-i18n="badge_collab">Collaboratif</span>
+            </div>
+            <h3 data-i18n="p3_title">Plateforme de communication professionnelle</h3>
+            <p data-i18n="p3_desc">Application de communication sur une architecture microservices avec Spring Boot, .NET et React. Messagerie en temps réel et déploiement conteneurisé.</p>
+            <div class="tech-list">
+              <span class="tech-pill">Spring Boot</span><span class="tech-pill">.NET</span>
+              <span class="tech-pill">React</span><span class="tech-pill">Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-row proj-row-2">
+        <div class="proj-col">
+          <div class="project-card proj-small reveal">
+            <div class="project-badges">
+              <span class="badge badge-green">MERN Stack</span>
+              <span class="badge badge-purple" data-i18n="badge_collab">Collaboratif</span>
+            </div>
+            <h3 data-i18n="p4_title">Plateforme étudiants‑lauréats</h3>
+            <p data-i18n="p4_desc">Plateforme facilitant les interactions entre étudiants et anciens diplômés : réseau, offres d'emploi et mentorat. Stack MERN end-to-end.</p>
+            <div class="tech-list">
+              <span class="tech-pill">MongoDB</span><span class="tech-pill">Express.js</span>
+              <span class="tech-pill">React</span><span class="tech-pill">Node.js</span>
+            </div>
+          </div>
+
+          <div class="project-card proj-small reveal">
+            <div class="project-badges">
+              <span class="badge badge-blue">Web App</span>
+              <span class="badge badge-purple" data-i18n="badge_university">Université</span>
+            </div>
+            <h3 data-i18n="p5_title">Gestion des ressources humaines</h3>
+            <p data-i18n="p5_desc">Application GRH pour l'Université Abdelmalek Essaâdi : gestion des employés, congés, contrats et rapports administratifs.</p>
+            <div class="tech-list">
+              <span class="tech-pill">Laravel</span><span class="tech-pill">Vue.js</span><span class="tech-pill">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card proj-large reveal">
+          <div class="proj-bg-num">02</div>
+          <div class="project-badges">
+            <span class="badge badge-blue">Web App</span>
+            <span class="badge badge-purple" data-i18n="badge_collab">Collaboratif</span>
+          </div>
+          <h3 data-i18n="p6_title">Bibliothèque en ligne</h3>
+          <p data-i18n="p6_desc">Plateforme complète permettant aux utilisateurs d'emprunter et gérer des livres en ligne. Système de gestion avec authentification sécurisée, catalogue de livres, suivi des emprunts et retours, tableau de bord administrateur et notifications automatiques.</p>
+          <div class="tech-list">
+            <span class="tech-pill">.NET</span><span class="tech-pill">React</span>
+            <span class="tech-pill">SQL Server</span>
+          </div>
+          <div class="card-anim"><div class="card-anim-ring"></div></div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="alt-bg" id="experience">
+      <section>
+        <div class="section-header reveal">
+          <div class="section-tag" data-i18n="s_exp_tag">Parcours professionnel</div>
+          <h2 class="section-title" data-i18n="s_exp_title">Mon <span>expérience</span></h2>
+        </div>
+
+        <div class="exp-timeline">
+
+          <div class="exp-item reveal">
+            <div class="exp-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <h3 data-i18n="e1_title">Ingénieur Fullstack</h3>
+                <span class="exp-date" data-i18n="e1_date">Nov 2025 → Fév 2026</span>
+              </div>
+              <div class="exp-company" data-i18n="e1_company">SENDATRACK — Tanger, Maroc</div>
+              <ul>
+                <li data-i18n="e1_l1">Contribution au développement d'API REST pour l'application Iosentech</li>
+                <li data-i18n="e1_l2">Développement de l'application mobile ArdiBox, Sendatrack et SendaDriver</li>
+                <li data-i18n="e1_l3">Conception et intégration d'interfaces web pour l'application Sendatrack</li>
+                <li data-i18n="e1_l4">Gestion des versions, intégration continue et déploiement continu</li>
+              </ul>
+              <div class="exp-tech">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">Angular</span>
+                <span class="tech-pill">Flutter</span><span class="tech-pill">Docker</span>
+                <span class="tech-pill">MySQL</span><span class="tech-pill">SonarQube</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <h3 data-i18n="e2_title">Stagiaire Développeur Fullstack (PFE)</h3>
+                <span class="exp-date" data-i18n="e2_date">Fév 2025 → Août 2025</span>
+              </div>
+              <div class="exp-company" data-i18n="e2_company">NTT DATA MOROCCO — Tétouan, Maroc</div>
+              <ul>
+                <li data-i18n="e2_l1">Développement d'APIs REST pour la plateforme après-vente BMW</li>
+                <li data-i18n="e2_l2">Conception et intégration d'interfaces utilisateur avec Angular</li>
+                <li data-i18n="e2_l3">Participation active aux cérémonies Scrum : daily meetings, sprint planning, rétrospectives</li>
+              </ul>
+              <div class="exp-tech">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">Angular</span>
+                <span class="tech-pill">Podman</span><span class="tech-pill">AWS</span>
+                <span class="tech-pill">MongoDB</span><span class="tech-pill">JHipster</span>
+                <span class="tech-pill">Jira</span><span class="tech-pill">Confluence</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <h3 data-i18n="e3_title">Stagiaire Fullstack & Déploiement (PFA)</h3>
+                <span class="exp-date" data-i18n="e3_date">Juil 2024 → Sep 2024</span>
+              </div>
+              <div class="exp-company" data-i18n="e3_company">ENSA Tanger — Université Abdelmalek Essaâdi</div>
+              <ul>
+                <li data-i18n="e3_l1">Développement et déploiement de deux applications : gestion des concours d'admission et digitalisation d'événements</li>
+                <li data-i18n="e3_l2">Tests de sécurité avec OWASP ZAP et Burp Suite</li>
+                <li data-i18n="e3_l3">Tests unitaires avec JUnit et Mockito</li>
+              </ul>
+              <div class="exp-tech">
+                <span class="tech-pill">Spring Boot</span><span class="tech-pill">React</span>
+                <span class="tech-pill">Nginx</span><span class="tech-pill">Docker</span>
+                <span class="tech-pill">OWASP ZAP</span><span class="tech-pill">JUnit</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item reveal">
+            <div class="exp-dot"></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <h3 data-i18n="e4_title">Stagiaire Développeur Odoo</h3>
+                <span class="exp-date" data-i18n="e4_date">Juil 2023 → Août 2023</span>
+              </div>
+              <div class="exp-company" data-i18n="e4_company">TEOS TANGER — Tanger, Maroc</div>
+              <ul>
+                <li data-i18n="e4_l1">Conception et développement de modules personnalisés avec le framework Odoo</li>
+              </ul>
+              <div class="exp-tech">
+                <span class="tech-pill">Odoo</span><span class="tech-pill">Python</span>
+                <span class="tech-pill">XML</span><span class="tech-pill">PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <section id="education">
+      <div class="section-header reveal">
+        <div class="section-tag" data-i18n="s_edu_tag">Formation</div>
+        <h2 class="section-title" data-i18n="s_edu_title">Mon <span>cursus</span></h2>
+      </div>
+
+      <div class="exp-timeline">
+
+        <div class="exp-item reveal">
+          <div class="exp-dot" style="border-color:var(--accent2)"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <h3 data-i18n="ed1_title">🎓 Cycle Ingénieur — Génie Informatique</h3>
+              <span class="exp-date" style="background:rgba(129,140,248,0.08);border-color:rgba(129,140,248,0.2);color:var(--accent2)">2022 → 2025</span>
+            </div>
+            <div class="exp-company" style="color:var(--accent2)" data-i18n="ed1_school">ENSA Tanger — École Nationale des Sciences Appliquées</div>
+            <ul>
+              <li data-i18n="ed1_l1">Formation d'ingénieur en génie informatique — 3 ans de cycle ingénieur</li>
+              <li data-i18n="ed1_l2">Spécialisation en développement logiciel, architecture systèmes, cloud et sécurité</li>
+              <li data-i18n="ed1_l3">Projets académiques collaboratifs, stages en entreprise et participation à des hackathons</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-dot" style="border-color:var(--accent2)"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <h3 data-i18n="ed2_title">📚 Classes Préparatoires Intégrées</h3>
+              <span class="exp-date" style="background:rgba(129,140,248,0.08);border-color:rgba(129,140,248,0.2);color:var(--accent2)">2020 → 2022</span>
+            </div>
+            <div class="exp-company" style="color:var(--accent2)" data-i18n="ed2_school">ENSA Tanger</div>
+            <ul>
+              <li data-i18n="ed2_l1">Formation scientifique et mathématique intensive en préparation au cycle ingénieur</li>
+              <li data-i18n="ed2_l2">Bases solides en algorithmique, mathématiques, physique et sciences de l'ingénieur</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-dot" style="border-color:var(--accent2)"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <h3 data-i18n="ed3_title">🏫 Baccalauréat Sciences Physiques-Chimie BIOF</h3>
+              <span class="exp-date" style="background:rgba(129,140,248,0.08);border-color:rgba(129,140,248,0.2);color:var(--accent2)">2020</span>
+            </div>
+            <div class="exp-company" style="color:var(--accent2)" data-i18n="ed3_school">Lycée Bir Anzaran — Tanger</div>
+            <ul>
+              <li data-i18n="ed3_l1">Filière bilingue franco-marocaine — spécialité Sciences Physiques-Chimie</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="alt-bg" id="certifications">
+      <section>
+        <div class="section-header reveal">
+          <div class="section-tag" data-i18n="s_certif_tag">Certifications</div>
+          <h2 class="section-title" data-i18n="s_certif_title">Mes <span>certifications</span></h2>
+        </div>
+
+        <div class="certif-grid stagger-children">
+
+          <div class="certif-card">
+            <div class="certif-card-header" style="background:linear-gradient(135deg,rgba(247,147,26,0.12),rgba(239,68,68,0.08))">
+              <div class="certif-card-logo">☕</div>
+              <div class="certif-card-badge" style="background:rgba(247,147,26,0.15);color:#f7931a;border-color:rgba(247,147,26,0.3)">Oracle</div>
+            </div>
+            <div class="certif-card-body">
+              <h3 data-i18n="c1_title">Oracle Certified Associate</h3>
+              <p class="certif-card-sub" data-i18n="c1_sub">Java SE 8 — Oracle Corporation</p>
+              <p class="certif-card-desc" data-i18n="c1_desc">Certification officielle Oracle validant la maîtrise du langage Java : POO, gestion d'exceptions, API core, flux de données et programmation fonctionnelle.</p>
+              <div class="tags">
+                <span class="tag">Java SE 8</span><span class="tag">POO</span><span class="tag">Oracle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certif-card">
+            <div class="certif-card-header" style="background:linear-gradient(135deg,rgba(247,220,111,0.12),rgba(56,189,248,0.08))">
+              <div class="certif-card-logo">⚡</div>
+              <div class="certif-card-badge" style="background:rgba(247,220,111,0.15);color:#f7dc6f;border-color:rgba(247,220,111,0.3)">BrightCoding</div>
+            </div>
+            <div class="certif-card-body">
+              <h3 data-i18n="c2_title">JavaScript</h3>
+              <p class="certif-card-sub" data-i18n="c2_sub">BrightCoding Platform</p>
+              <p class="certif-card-desc" data-i18n="c2_desc">Certification couvrant les fondamentaux et concepts avancés de JavaScript : ES6+, asynchronisme (Promises, async/await), manipulation du DOM et APIs web.</p>
+              <div class="tags">
+                <span class="tag">JavaScript</span><span class="tag">ES6+</span><span class="tag">DOM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certif-card">
+            <div class="certif-card-header" style="background:linear-gradient(135deg,rgba(56,189,248,0.12),rgba(129,140,248,0.08))">
+              <div class="certif-card-logo">⚛️</div>
+              <div class="certif-card-badge" style="background:rgba(56,189,248,0.15);color:var(--accent);border-color:rgba(56,189,248,0.3)">BrightCoding</div>
+            </div>
+            <div class="certif-card-body">
+              <h3 data-i18n="c3_title">React JS</h3>
+              <p class="certif-card-sub" data-i18n="c3_sub">BrightCoding Platform</p>
+              <p class="certif-card-desc" data-i18n="c3_desc">Certification React JS validant la maîtrise des composants, hooks (useState, useEffect, useContext), gestion d'état, routing et bonnes pratiques front-end.</p>
+              <div class="tags">
+                <span class="tag">React</span><span class="tag">Hooks</span><span class="tag">State Management</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <section id="langues">
+      <div class="section-header reveal">
+        <div class="section-tag" data-i18n="s_lang_tag">Langues</div>
+        <h2 class="section-title" data-i18n="s_lang_title">Mes <span>langues</span></h2>
+      </div>
+
+      <div class="lang-grid stagger-children">
+
+        <div class="lang-card">
+          <div class="lang-flag">🇲🇦</div>
+          <div class="lang-info">
+            <div class="lang-card-name" data-i18n="lang1_name">Arabe</div>
+            <div class="lang-card-lvl" data-i18n="lang1_lvl">Langue maternelle</div>
+          </div>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-flag">🇫🇷</div>
+          <div class="lang-info">
+            <div class="lang-card-name" data-i18n="lang2_name">Français</div>
+            <div class="lang-card-lvl" data-i18n="lang2_lvl">Courant</div>
+          </div>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-flag">🇬🇧</div>
+          <div class="lang-info">
+            <div class="lang-card-name" data-i18n="lang3_name">Anglais</div>
+            <div class="lang-card-lvl" data-i18n="lang3_lvl">Courant</div>
+          </div>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-flag">🇪🇸</div>
+          <div class="lang-info">
+            <div class="lang-card-name" data-i18n="lang4_name">Espagnol</div>
+            <div class="lang-card-lvl" data-i18n="lang4_lvl">Notions de base</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="alt-bg" id="interets">
+      <section>
+        <div class="section-header reveal">
+          <div class="section-tag" data-i18n="s_int_tag">Centres d'intérêt</div>
+          <h2 class="section-title" data-i18n="s_int_title">Mes <span>passions</span></h2>
+        </div>
+
+        <div class="interests-grid stagger-children">
+          <div class="interest-card">
+            <div class="interest-icon">♟️</div>
+            <div class="interest-label" data-i18n="int1">Échecs</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon">⚽</div>
+            <div class="interest-label" data-i18n="int2">Football</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon">🗺️</div>
+            <div class="interest-label" data-i18n="int3">Géographie</div>
+          </div>
+          <div class="interest-card">
+            <div class="interest-icon">📖</div>
+            <div class="interest-label" data-i18n="int4">Histoire</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="contact">
+      <div class="contact-wrapper reveal">
+        <div class="section-tag" style="justify-content:center; margin-bottom:20px" data-i18n="s_contact_tag">Contact</div>
+        <h2 class="section-title" style="margin-bottom:12px" data-i18n="s_contact_title">Travaillons <span>ensemble</span></h2>
+        <p class="contact-subtitle" data-i18n="s_contact_sub">Disponible pour missions, CDI ou nouvelles opportunités.</p>
+        <a href="mailto:soufianbouktaib1@gmail.com" class="contact-email">
+            soufianbouktaib1@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/soufian-bouktaib-446654169/" 
+            class="contact-email" >
+            LinkedIn
+        </a>        
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-brand">Soufian Bouktaib.</div>
+      <span data-i18n="footer_copy">© 2026 — Ingénieur Fullstack</span>
+      <div class="footer-links">
+        <a href="mailto:soufianbouktaib1@gmail.com">Email</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    style="position:fixed;bottom:28px;right:28px;width:44px;height:44px;border-radius:50%;
+           background:linear-gradient(135deg,var(--accent),var(--accent2));
+           border:none;cursor:pointer;font-size:1.1rem;color:#050810;
+           opacity:0;transition:opacity 0.3s ease;z-index:99;pointer-events:none;
+           box-shadow:0 4px 20px rgba(56,189,248,0.3);" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
