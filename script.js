@@ -1,7 +1,6 @@
-
 const T = {
   fr: {
-    nav_skills:'Skills', nav_projects:'Projets', nav_exp:'Expérience',
+    nav_skills:'Compétences', nav_projects:'Projets', nav_exp:'Expérience',
     nav_edu:'Formation', nav_certif:'Certifications', nav_langues:'Langues',
     nav_interets:'Intérêts', nav_contact:'Me contacter',
 
@@ -142,7 +141,7 @@ const T = {
     ed1_l1:'Computer engineering degree — 3-year engineering cycle',
     ed1_l2:'Specialization in software development, system architecture, cloud and security',
     ed1_l3:'Collaborative academic projects, internships and hackathons',
-    ed2_title:'📚 Integrated Preparatory Classes ', ed2_school:'ENSA Tanger',
+    ed2_title:'📚 Integrated Preparatory Classes', ed2_school:'ENSA Tanger',
     ed2_l1:'Intensive scientific and mathematical training in preparation for the engineering cycle',
     ed2_l2:'Strong foundations in algorithms, mathematics, physics and engineering sciences',
     ed3_title:'🏫 High School Diploma — Physics-Chemistry BIOF',
@@ -175,6 +174,30 @@ const T = {
 
 let lang = 'fr';
 
+function initCursor() {
+  const dot  = document.getElementById('cursorDot');
+  const ring = document.getElementById('cursorRing');
+  if (!dot || !ring) return;
+
+  let mouseX = 0, mouseY = 0;
+  let ringX  = 0, ringY  = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX; mouseY = e.clientY;
+    dot.style.left  = mouseX + 'px';
+    dot.style.top   = mouseY + 'px';
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+}
+
 function initProgressBar() {
   const bar = document.getElementById('pageProgress');
   if (!bar) return;
@@ -194,19 +217,6 @@ function initReveal() {
     });
   }, { threshold: 0.07 });
   document.querySelectorAll('.reveal, .stagger-children').forEach(el => io.observe(el));
-}
-
-function initLangBars() {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.lang-bar-fill').forEach(fill => fill.classList.add('animate'));
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  const langSection = document.getElementById('langues');
-  if (langSection) io.observe(langSection);
 }
 
 function animateCounter(el, target, duration = 1200) {
@@ -245,7 +255,6 @@ function initCounters() {
 function spawnParticles() {
   const container = document.querySelector('.wrapper');
   if (!container) return;
-
   function spawn() {
     const p = document.createElement('div');
     p.className = 'particle';
@@ -257,7 +266,6 @@ function spawnParticles() {
     const dur = Math.random() * 6 + 4;
     const delay = Math.random() * 3;
     const color = Math.random() > 0.5 ? 'rgba(56,189,248,0.6)' : 'rgba(129,140,248,0.6)';
-
     p.style.cssText = `
       width:${size}px; height:${size}px;
       left:${x}px; top:${y}px;
@@ -269,7 +277,6 @@ function spawnParticles() {
     container.appendChild(p);
     setTimeout(() => p.remove(), (dur + delay) * 1000);
   }
-
   setInterval(spawn, 600);
 }
 
@@ -278,9 +285,7 @@ function initTyped() {
   const roles_en = ["Fullstack Engineer", "Spring Boot Developer", "Microservices Architect", "React Developer"];
   const el = document.getElementById('typedRole');
   if (!el) return;
-
   let roleIdx = 0, charIdx = 0, deleting = false;
-
   function tick() {
     const roles = lang === 'fr' ? roles_fr : roles_en;
     const role = roles[roleIdx % roles.length];
@@ -343,14 +348,31 @@ function initBackToTop() {
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
+function initCardTilt() {
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `translateY(-4px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+      card.style.transition = 'none';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = '';
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initCursor();
   initProgressBar();
   initReveal();
-  initLangBars();
   initCounters();
   initTyped();
   initNavHighlight();
   initSmoothScroll();
   initBackToTop();
+  initCardTilt();
   spawnParticles();
 });
