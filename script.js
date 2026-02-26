@@ -83,6 +83,9 @@ const T = {
     s_contact_sub:'Disponible pour missions, CDI ou nouvelles opportunités.',
     contact_loc:'Tanger, Maroc',
     footer_copy:'© 2026 — Ingénieur Fullstack',
+
+    cv_btn: '📄 Mon CV',
+    cv_file: 'soufianBouktaib-cv.pdf',
   },
   en: {
     nav_skills:'Skills', nav_projects:'Projects', nav_exp:'Experience',
@@ -169,25 +172,25 @@ const T = {
     s_contact_sub:'Available for freelance, full-time or new opportunities.',
     contact_loc:'Tangier, Morocco',
     footer_copy:'© 2026 — Fullstack Engineer',
+
+    cv_btn: '📄 Resume',
+    cv_file: 'resume-eng.pdf',
   }
 };
 
 let lang = 'fr';
+let isDark = true;
 
 function initCursor() {
   const dot  = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');
   if (!dot || !ring) return;
-
-  let mouseX = 0, mouseY = 0;
-  let ringX  = 0, ringY  = 0;
-
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX; mouseY = e.clientY;
-    dot.style.left  = mouseX + 'px';
-    dot.style.top   = mouseY + 'px';
+    dot.style.left = mouseX + 'px';
+    dot.style.top  = mouseY + 'px';
   });
-
   function animateRing() {
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
@@ -258,14 +261,16 @@ function spawnParticles() {
   function spawn() {
     const p = document.createElement('div');
     p.className = 'particle';
-    const size = Math.random() * 3 + 1;
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight + window.scrollY;
-    const tx = (Math.random() - 0.5) * 120 + 'px';
-    const ty = -Math.random() * 200 - 80 + 'px';
-    const dur = Math.random() * 6 + 4;
+    const size  = Math.random() * 3 + 1;
+    const x     = Math.random() * window.innerWidth;
+    const y     = Math.random() * window.innerHeight + window.scrollY;
+    const tx    = (Math.random() - 0.5) * 120 + 'px';
+    const ty    = -Math.random() * 200 - 80 + 'px';
+    const dur   = Math.random() * 6 + 4;
     const delay = Math.random() * 3;
-    const color = Math.random() > 0.5 ? 'rgba(56,189,248,0.6)' : 'rgba(129,140,248,0.6)';
+    const color = isDark
+      ? (Math.random() > 0.5 ? 'rgba(56,189,248,0.6)' : 'rgba(129,140,248,0.6)')
+      : (Math.random() > 0.5 ? 'rgba(14,165,233,0.5)' : 'rgba(99,102,241,0.5)');
     p.style.cssText = `
       width:${size}px; height:${size}px;
       left:${x}px; top:${y}px;
@@ -303,7 +308,7 @@ function initTyped() {
 
 function initNavHighlight() {
   const sections = document.querySelectorAll('section[id], div[id]');
-  const links = document.querySelectorAll('.nav-links a[href^="#"]');
+  const links    = document.querySelectorAll('.nav-links a[href^="#"]');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -320,11 +325,38 @@ window.toggleLang = function () {
   lang = lang === 'fr' ? 'en' : 'fr';
   const btn = document.getElementById('langToggle');
   if (btn) btn.textContent = lang === 'fr' ? '🌐 EN' : '🌐 FR';
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
     if (T[lang][k] !== undefined) el.innerHTML = T[lang][k];
   });
+
+  updateCVButton();
 };
+
+window.toggleTheme = function () {
+  isDark = !isDark;
+  document.body.classList.toggle('light-mode', !isDark);
+  const btn = document.getElementById('themeToggle');
+  if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+};
+
+function updateCVButton() {
+  const btn = document.getElementById('cvDownloadBtn');
+  if (!btn) return;
+  const t = T[lang];
+  btn.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    <span>${t.cv_btn}</span>
+  `;
+  btn.setAttribute('download', t.cv_file);
+  btn.setAttribute('href', t.cv_file);
+}
 
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -365,6 +397,16 @@ function initCardTilt() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    isDark = false;
+    document.body.classList.add('light-mode');
+    const btn = document.getElementById('themeToggle');
+    if (btn) btn.textContent = '🌙';
+  }
+
+  updateCVButton();
+
   initCursor();
   initProgressBar();
   initReveal();
