@@ -174,7 +174,7 @@ const T = {
     footer_copy:'© 2026 — Fullstack Engineer',
 
     cv_btn: '📄 Resume',
-    cv_file: 'resume-eng.pdf',
+    cv_file: 'resume.pdf',
   }
 };
 
