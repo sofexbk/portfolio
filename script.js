@@ -85,7 +85,7 @@ const T = {
     footer_copy:'© 2026 — Ingénieur Fullstack',
 
     cv_btn: '📄 Mon CV',
-    cv_file: 'soufianBouktaib-cv.pdf',
+    cv_file: 'cv.pdf',
   },
   en: {
     nav_skills:'Skills', nav_projects:'Projects', nav_exp:'Experience',
