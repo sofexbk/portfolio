@@ -28,6 +28,8 @@ const T = {
     p5_desc:"Application GRH pour l'Université Abdelmalek Essaâdi : gestion des employés, congés, contrats et rapports administratifs.",
     p6_title:'Bibliothèque en ligne',
     p6_desc:"Plateforme complète permettant aux utilisateurs d'emprunter et gérer des livres en ligne. Authentification sécurisée, catalogue de livres, suivi des emprunts, tableau de bord administrateur et notifications automatiques.",
+    p7_title:'🧠 Plateforme RAG — Q&A sur documents',
+    p7_desc:"Application de question-réponse intelligente sur documents personnels. Interface React/TypeScript avec upload drag-and-drop, backend FastAPI, pipeline RAG complet (chunking, embeddings, recherche vectorielle Qdrant), authentification JWT et cache Redis.",
 
     s_exp_tag:'Parcours professionnel', s_exp_title:'Mon <span>expérience</span>',
     e1_title:'Ingénieur Fullstack', e1_date:'Nov 2025 → Fév 2026', e1_company:'SENDATRACK — Tanger, Maroc',
@@ -116,6 +118,8 @@ const T = {
     p5_desc:'HR application for Abdelmalek Essaâdi University: employee management, leave, contracts and administrative reports.',
     p6_title:'Online Library',
     p6_desc:'Complete platform allowing users to borrow and manage books online. Secure authentication, book catalog, borrow tracking, admin dashboard and automatic notifications.',
+    p7_title:'🧠 RAG Platform — Document Q&A',
+    p7_desc:'Intelligent question-answering application over personal documents. React/TypeScript interface with drag-and-drop upload, FastAPI backend, full RAG pipeline (chunking, embeddings, Qdrant vector search), JWT authentication and Redis caching.',
 
     s_exp_tag:'Professional Journey', s_exp_title:'My <span>experience</span>',
     e1_title:'Fullstack Engineer', e1_date:'Nov 2025 → Feb 2026',
