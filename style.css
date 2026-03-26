@@ -494,7 +494,6 @@ body.light-mode .exp-item:hover .exp-card {
 .exp-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 
 .certif-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-
 .certif-card {
   background: var(--bg); border: 1px solid var(--border);
   border-radius: 16px; overflow: hidden;

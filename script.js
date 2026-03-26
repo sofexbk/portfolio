@@ -73,7 +73,8 @@ const T = {
     c3_desc:"Certification couvrant les fondamentaux et concepts avancés de JavaScript : ES6+, asynchronisme (Promises, async/await), manipulation du DOM et APIs web.",
     c4_title:'React JS', c4_sub:'BrightCoding Platform',
     c4_desc:"Certification React JS validant la maîtrise des composants, hooks (useState, useEffect, useContext), gestion d'état, routing et bonnes pratiques front-end.",
-
+    c5_title:'Oracle Certified Professional', c5_sub:'Java SE 21 — Oracle Corporation',
+    c5_desc:"Certification avancée Oracle validant la maîtrise de Java SE 21 : virtual threads (Project Loom), sequenced collections, record patterns, pattern matching for switch et les dernières APIs modernes.",
     s_lang_tag:'Langues', s_lang_title:'Mes <span>langues</span>',
     lang1_name:'Arabe', lang1_lvl:'Langue maternelle',
     lang2_name:'Français', lang2_lvl:'Courant',
@@ -166,7 +167,8 @@ const T = {
     c3_desc:'Certification covering JavaScript fundamentals and advanced concepts: ES6+, async programming (Promises, async/await), DOM manipulation and web APIs.',
     c4_title:'React JS', c4_sub:'BrightCoding Platform',
     c4_desc:'React JS certification validating mastery of components, hooks (useState, useEffect, useContext), state management, routing and front-end best practices.',
-
+    c5_title:'Oracle Certified Professional', c5_sub:'Java SE 21 — Oracle Corporation',
+    c5_desc:'Advanced Oracle certification validating mastery of Java SE 21: virtual threads (Project Loom), sequenced collections, record patterns, pattern matching for switch and the latest modern APIs.',
     s_lang_tag:'Languages', s_lang_title:'My <span>languages</span>',
     lang1_name:'Arabic', lang1_lvl:'Native',
     lang2_name:'French', lang2_lvl:'Fluent',
